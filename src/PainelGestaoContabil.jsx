@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSync } from "./useSync";
+import LOGO_B64 from "./logo";
 
 // ─── Competências disponíveis Jul–Dez 2026 ────────────────────────────────────
 const COMPETENCIAS = [
@@ -203,7 +204,6 @@ function ProgressRuler({ pct, entregue, andamento, pendente, total }) {
 }
 
 // ─── Módulo Vencimento de Impostos ─────────────────────────────────────────────
-import LOGO_B64 from "./logo";
 
 function fmtBRL(v) {
   if (!v && v !== 0) return "";
