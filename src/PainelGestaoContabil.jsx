@@ -1024,7 +1024,7 @@ function ResumoExecutivo({ statuses, onNavigate, comp }) {
         <div>
           {sorted.map(({ e, tasks, prog }, idx) => {
             const isExpanded = expandedId === e.id;
-            const alertLevel = prog.pct === 100 ? "done" : prog.pct < 40 ? "warning" : prog.pct < 80 ? "ok" : "done";
+            // alertLevel computed inline below
             const borderColor = prog.pct === 0 ? "#DC2626" : prog.pct < 40 ? "#F59E0B" : prog.pct < 80 ? "#2563EB" : "#16A34A";
 
             return (
@@ -1107,8 +1107,7 @@ export default function PainelGestaoContabil() {
   const comp = getCompetencia(competenciaKey);
   const MONTH = comp.label;
 
-  // Indicador de sincronização
-  const [syncStatus, setSyncStatus] = useState("synced"); // "synced" | "saving" | "error"
+  // Indicador de sincronização (visual apenas)
 
   const empresa = empresas[activeEmpresa];
   const getStatus = (key) => statuses[`${empresa.id}_${key}`] || "A Fazer";
